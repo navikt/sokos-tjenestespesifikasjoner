@@ -1,4 +1,4 @@
-name: Build
+name: Build branch
 on:
   pull_request:
   workflow_dispatch:
