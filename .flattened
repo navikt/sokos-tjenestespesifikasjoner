@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>no.nav.sokos.tjenestespesifikasjoner</groupId>
+  <artifactId>tjenestespesifikasjoner</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <organization>
+    <name>no.nav</name>
+    <url>https://github.com/navikt</url>
+  </organization>
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/MIT</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <organization>NAV (Arbeids- og velferdsdirektoratet) - The Norwegian Labour and Welfare Administration</organization>
+      <organizationUrl>https://www.nav.no</organizationUrl>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git@github.com:navikt/sokos-tjenestespesifikasjoner.git</connection>
+    <developerConnection>scm:git:git@github.com:navikt/sokos-tjenestespesifikasjoner.git</developerConnection>
+    <url>https://github.com/navikt/sokos-tjenestespesifikasjoner</url>
+  </scm>
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub navikt Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/navikt/sokos-tjenestespesifikasjoner</url>
+    </repository>
+  </distributionManagement>
+  <properties>
+    <maven.compiler.release>21</maven.compiler.release>
+    <java.version>21</java.version>
+    <maven.compiler.source>21</maven.compiler.source>
+    <jaxb-core.version>4.0.2</jaxb-core.version>
+    <revision>1.0</revision>
+    <sha1></sha1>
+    <maven.compiler.target>21</maven.compiler.target>
+    <changelist>-SNAPSHOT</changelist>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jaxb-impl.version>4.0.2</jaxb-impl.version>
+  </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>jakarta.xml.bind</groupId>
+        <artifactId>jakarta.xml.bind-api</artifactId>
+        <version>4.0.2</version>
+      </dependency>
+      <dependency>
+        <groupId>jakarta.xml.ws</groupId>
+        <artifactId>jakarta.xml.ws-api</artifactId>
+        <version>4.0.2</version>
+      </dependency>
+      <dependency>
+        <groupId>io.github.threeten-jaxb</groupId>
+        <artifactId>threeten-jaxb-core</artifactId>
+        <version>2.2.0</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <repositories>
+    <repository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/navikt/sokos-tjenestespesifikasjoner</url>
+    </repository>
+  </repositories>
+</project>
