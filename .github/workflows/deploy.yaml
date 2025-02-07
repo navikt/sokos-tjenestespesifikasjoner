@@ -3,6 +3,13 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - '**.md'
+      - 'LICENCE'
+      - 'CODEOWNERS'
+      - '.gitignore'
+      - '.github/workflows/build-branch.yaml'
+      - '.github/dependabot.yaml'
 
 env:
   TZ: Europe/Oslo
@@ -13,7 +20,7 @@ permissions:
   packages: "write"
 
 jobs:
-  build-and-deploy-artifact:
+  build-deploy-artifact:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
