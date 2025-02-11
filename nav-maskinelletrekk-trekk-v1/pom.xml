@@ -9,16 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>avstemming-v1-tjenestespesifikasjon</artifactId>
+    <artifactId>nav-maskinelletrekk-trekk-v1</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>jakarta.xml.ws</groupId>
-            <artifactId>jakarta.xml.ws-api</artifactId>
         </dependency>
     </dependencies>
 
@@ -32,30 +28,27 @@
                 <plugins>
                     <plugin>
                         <groupId>org.apache.cxf</groupId>
-                        <artifactId>cxf-codegen-plugin</artifactId>
+                        <artifactId>cxf-xjc-plugin</artifactId>
                         <executions>
                             <execution>
-                                <id>generate-sources-avstemming</id>
+                                <id>xjc</id>
                                 <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>xsdtojava</goal>
+                                </goals>
                                 <configuration>
                                     <sourceRoot>${basedir}/src/main/java</sourceRoot>
-                                    <wsdlOptions>
-                                        <wsdlOption>
-                                            <wsdl>
-                                                ${basedir}/src/main/resources/wsdl/no/nav/virksomhet/tjenester/avstemming/avstemming.wsdl
-                                            </wsdl>
-                                            <wsdlLocation>
-                                                classpath:wsdl/no/nav/virksomhet/tjenester/avstemming/avstemming.wsdl
-                                            </wsdlLocation>
-                                            <extraargs>
-                                                <extraarg>-xjc-npa</extraarg>
-                                            </extraargs>
-                                        </wsdlOption>
-                                    </wsdlOptions>
+                                    <xsdOptions>
+                                        <xsdOption>
+                                            <extension>true</extension>
+                                            <xsd>${basedir}/src/main/resources/xsd/arena_mock.xsd</xsd>
+                                        </xsdOption>
+                                        <xsdOption>
+                                            <extension>true</extension>
+                                            <xsd>${basedir}/src/main/resources/xsd/trekk_v1.xsd</xsd>
+                                        </xsdOption>
+                                    </xsdOptions>
                                 </configuration>
-                                <goals>
-                                    <goal>wsdl2java</goal>
-                                </goals>
                             </execution>
                         </executions>
                     </plugin>
@@ -63,5 +56,4 @@
             </build>
         </profile>
     </profiles>
-
 </project>

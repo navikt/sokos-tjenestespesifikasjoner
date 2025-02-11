@@ -12,6 +12,7 @@
     <modules>
         <module>avstemming-v1-tjenestespesifikasjon</module>
         <module>nav-fim-tss-organisasjon-v4-tjenestespesifikasjon</module>
+        <module>nav-maskinelletrekk-trekk-v1</module>
         <module>nav-virksomhet-oppdragsbehandling-v1-meldingsdefinisjon</module>
         <module>nav-ytelsevedtak-v1-tjenestespesifikasjon</module>
     </modules>
@@ -113,6 +114,16 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>flatten-maven-plugin</artifactId>
                     <version>1.6.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-xjc-plugin</artifactId>
+                    <version>4.1.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.cxf</groupId>
+                    <artifactId>cxf-codegen-plugin</artifactId>
+                    <version>4.1.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>
