@@ -13,6 +13,7 @@
         <module>avstemming-v1-tjenestespesifikasjon</module>
         <module>nav-fim-tss-organisasjon-v4-tjenestespesifikasjon</module>
         <module>nav-virksomhet-oppdragsbehandling-v1-meldingsdefinisjon</module>
+        <module>nav-ytelsevedtak-v1-tjenestespesifikasjon</module>
     </modules>
 
     <properties>
