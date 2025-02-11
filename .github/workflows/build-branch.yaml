@@ -1,20 +1,29 @@
 name: Build branch
 on:
   pull_request:
+    paths-ignore:
+      - '**.md'
+      - 'LICENCE'
+      - 'CODEOWNERS'
+      - '.gitignore'
+      - '.github/workflows/deploy.yaml'
+      - '.github/dependabot.yaml'
+
   workflow_dispatch:
 
+
 jobs:
-  build-and-deploy-artifact:
-    name: Build
+  build-test-artifact:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Set up JDK
-        uses: actions/setup-java@v4
+
+      - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '21'
           cache: 'maven'
+
       - name: Build with Maven
         env:
           GITHUB_USERNAME: x-access-token
